@@ -25,7 +25,7 @@
         "baudrate": 250000,
         "notes": "",
         "is_katapult": true,
-        "is_bridge": false,
+        "is_bridge": true,
         "dfu_id": null,
         "magic_baud_tested": false,
         "use_magic_baud": false,
@@ -48,7 +48,10 @@
         "use_magic_baud": false,
         "dfu_exit_tested": false,
         "use_dfu_exit": false,
-        "exclude_from_batch": false
+        "exclude_from_batch": false,
+        "last_flashed": "2026-02-22 15:32:03",
+        "flashed_version": "v2026.02.00-4-g7beefc3d-dirty",
+        "flashed_commit": "7beefc3d0ebc"
     },
     {
         "name": "Chamber heater",
