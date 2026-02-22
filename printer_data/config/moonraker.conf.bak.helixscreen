@@ -2,6 +2,7 @@
 host: 0.0.0.0
 port: 7125
 klippy_uds_address: /home/sovol/printer_data/comms/klippy.sock
+
 [authorization]
 trusted_clients:
     172.17.0.0/16
@@ -19,20 +20,27 @@ cors_domains:
     *://localhost:*
     *://my.mainsail.xyz
     *://app.fluidd.xyz
+
 [octoprint_compat]
+
 [history]
+
 [analysis]
 enable_auto_analysis: True
 enable_estimator_updates: True
+
 [file_manager]
 enable_object_processing: True
+
 [update_manager]
 channel: stable
 refresh_interval: 168
+
 [timelapse]
 output_path: ~/printer_data/timelapse/
 frame_path: /tmp/timelapse/printer
 autorender: True
+
 # Crowsnest update_manager entry
 [update_manager crowsnest]
 type: git_repo
@@ -40,13 +48,16 @@ path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
 managed_services: crowsnest
 install_script: tools/pkglist.sh
+
 # [update_manager mainsail-config]
 # type: git_repo
 # primary_branch: master
 # path: ~/mainsail-config
 # origin: https://github.com/mainsail-crew/mainsail-config.git
 # managed_services: klipper
+
 #[include moonraker-obico-update.cfg]
+
 [update_manager fluidd]
 path: /home/sovol/fluidd
 repo: fluidd-core/fluidd
@@ -54,13 +65,22 @@ channel: stable
 type: web
 persistent_files:
     config.json
+
 [update_manager fluidd-config]
 managed_services: klipper
 origin: https://github.com/fluidd-core/fluidd-config.git
 path: /home/sovol/fluidd-config
 primary_branch: master
 type: git_repo
+
 [include octoeverywhere-system.cfg]
+
+[update_manager klipper-backup]
+type: git_repo
+path: ~/klipper-backup
+origin: https://github.com/Staubgeborener/klipper-backup.git
+managed_services: moonraker
+primary_branch: main
 ## Klippain Shake&Tune automatic update management
 [update_manager Klippain-ShakeTune]
 type: git_repo
@@ -71,6 +91,7 @@ requirements: requirements.txt
 system_dependencies: system-dependencies.json
 primary_branch: main
 managed_services: klipper
+
 [update_manager Klipper-Adaptive-Meshing-Purging]
 type: git_repo
 channel: dev
@@ -78,18 +99,21 @@ path: ~/Klipper-Adaptive-Meshing-Purging
 origin: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
 managed_services: klipper
 primary_branch: main
+
 [spoolman]
 server: http://192.168.1.124:7912/
 #   URL to the Spoolman instance. This parameter must be provided.
 sync_rate: 5
 #   The interval, in seconds, between sync requests with the
 #   Spoolman server.  The default is 5.
+ 
 [update_manager chopper-resonance-tuner]
 type: git_repo
 path: /home/sovol/chopper-resonance-tuner
 origin: https://github.com/MRX8024/chopper-resonance-tuner.git
 primary_branch: main
 managed_services: klipper
+
 [update_manager klipper_auto_speed]
 type: git_repo
 path: ~/klipper_auto_speed
@@ -97,6 +121,7 @@ origin: https://github.com/anonoei/klipper_auto_speed.git
 primary_branch: main
 install_script: install.sh
 managed_services: klipper
+
 [update_manager klipper_tmc_autotune]
 type: git_repo
 channel: dev
@@ -105,27 +130,3 @@ origin: https://github.com/andrewmcgr/klipper_tmc_autotune.git
 managed_services: klipper
 primary_branch: main
 install_script: install.sh
-# HelixScreen Update Manager
-# Added by HelixScreen installer - enables one-click updates from Mainsail/Fluidd
-[update_manager helixscreen]
-type: zip
-channel: stable
-repo: prestonbrown/helixscreen
-path: /home/sovol/helixscreen
-managed_services: helixscreen
-persistent_files:
-    config/helixconfig.json
-    config/.disabled_services
-[update_manager mainsail]
-path: /home/sovol/mainsail
-repo: mainsail-crew/mainsail
-channel: stable
-type: web
-persistent_files:
-    config.json
-[update_manager klipper-backup]
-type: git_repo
-path: ~/klipper-backup
-origin: https://github.com/Staubgeborener/klipper-backup.git
-managed_services: moonraker
-primary_branch: main
