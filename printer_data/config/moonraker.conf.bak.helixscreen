@@ -40,22 +40,20 @@ refresh_interval: 168
 output_path: ~/printer_data/timelapse/
 frame_path: /tmp/timelapse/printer
 autorender: True
-
 # Crowsnest update_manager entry
+
 [update_manager crowsnest]
 type: git_repo
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
 managed_services: crowsnest
 install_script: tools/pkglist.sh
-
 # [update_manager mainsail-config]
 # type: git_repo
 # primary_branch: master
 # path: ~/mainsail-config
 # origin: https://github.com/mainsail-crew/mainsail-config.git
 # managed_services: klipper
-
 #[include moonraker-obico-update.cfg]
 
 [update_manager fluidd]
@@ -74,13 +72,6 @@ primary_branch: master
 type: git_repo
 
 [include octoeverywhere-system.cfg]
-
-[update_manager klipper-backup]
-type: git_repo
-path: ~/klipper-backup
-origin: https://github.com/Staubgeborener/klipper-backup.git
-managed_services: moonraker
-primary_branch: main
 ## Klippain Shake&Tune automatic update management
 [update_manager Klippain-ShakeTune]
 type: git_repo
@@ -106,13 +97,6 @@ server: http://192.168.1.124:7912/
 sync_rate: 5
 #   The interval, in seconds, between sync requests with the
 #   Spoolman server.  The default is 5.
- 
-[update_manager chopper-resonance-tuner]
-type: git_repo
-path: /home/sovol/chopper-resonance-tuner
-origin: https://github.com/MRX8024/chopper-resonance-tuner.git
-primary_branch: main
-managed_services: klipper
 
 [update_manager klipper_auto_speed]
 type: git_repo
@@ -121,7 +105,6 @@ origin: https://github.com/anonoei/klipper_auto_speed.git
 primary_branch: main
 install_script: install.sh
 managed_services: klipper
-
 [update_manager klipper_tmc_autotune]
 type: git_repo
 channel: dev
@@ -130,3 +113,17 @@ origin: https://github.com/andrewmcgr/klipper_tmc_autotune.git
 managed_services: klipper
 primary_branch: main
 install_script: install.sh
+[update_manager klipper-backup]
+type: git_repo
+path: ~/klipper-backup
+origin: https://github.com/Staubgeborener/klipper-backup.git
+managed_services: moonraker
+primary_branch: main
+[update_manager klipperfleet]
+type: git_repo
+path: /home/sovol/KlipperFleet
+origin: https://github.com/JohnBaumb/KlipperFleet.git
+primary_branch: main
+managed_services: klipperfleet
+install_script: install.sh
+is_system_service: False
