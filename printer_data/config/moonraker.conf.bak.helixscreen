@@ -27,8 +27,25 @@ cors_domains:
 [history]
 
 [update_manager]
-channel: dev
+channel: stable
 refresh_interval: 168
+
+[update_manager klipper]
+channel: stable
+report_anomalies: False
+
+[analysis]
+enable_auto_analysis: True
+enable_estimator_updates: True
+
+[file_manager]
+enable_object_processing: True
+
+[timelapse]
+output_path: ~/printer_data/timelapse/
+frame_path: /tmp/timelapse/printer
+autorender: True
+# Crowsnest update_manager entry
 
 [update_manager fluidd]
 path: /home/sovol/fluidd
@@ -52,13 +69,22 @@ path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
 managed_services: crowsnest
 install_script: tools/pkglist.sh
+
 [update_manager klipper-backup]
 type: git_repo
 path: ~/klipper-backup
 origin: https://github.com/Staubgeborener/klipper-backup.git
 managed_services: moonraker
 primary_branch: main
+
 [include octoeverywhere-system.cfg]
+
+[spoolman]
+server: http://192.168.1.124:7912/
+#   URL to the Spoolman instance. This parameter must be provided.
+sync_rate: 5
+#   The interval, in seconds, between sync requests with the
+#   Spoolman server.  The default is 5.
 
 [update_manager klipper_tmc_autotune]
 primary_branch: main
@@ -67,3 +93,40 @@ origin: https://github.com/andrewmcgr/klipper_tmc_autotune
 path: /home/sovol/klipper_tmc_autotune
 channel: dev
 type: git_repo
+
+## Klippain Shake&Tune automatic update management
+[update_manager Klippain-ShakeTune]
+type: git_repo
+origin: https://github.com/Frix-x/klippain-shaketune.git
+path: ~/klippain_shaketune
+virtualenv: /home/sovol/klippy-env
+requirements: requirements.txt
+system_dependencies: system-dependencies.json
+primary_branch: main
+managed_services: klipper
+
+[update_manager KlipperScreen]
+install_script: /home/sovol/KlipperScreen/scripts/KlipperScreen-install.sh
+requirements: /home/sovol/KlipperScreen/scripts/KlipperScreen-requirements.txt
+env: /home/sovol/.KlipperScreen-env/bin/python
+managed_services: KlipperScreen
+origin: https://github.com/KlipperScreen/KlipperScreen.git
+path: /home/sovol/KlipperScreen
+type: git_repo
+
+[update_manager mainsail]
+path: /home/sovol/mainsail
+repo: mainsail-crew/mainsail
+channel: stable
+type: web
+persistent_files:
+    config.json
+
+[update_manager klipperfleet]
+type: git_repo
+path: /home/sovol/KlipperFleet
+origin: https://github.com/JohnBaumb/KlipperFleet.git
+primary_branch: main
+managed_services: klipperfleet
+install_script: install.sh
+is_system_service: False
