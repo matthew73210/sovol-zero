@@ -16,7 +16,7 @@
         "dfu_exit_tested": false,
         "use_dfu_exit": false,
         "exclude_from_batch": false,
-        "last_flashed": "2026-03-21 09:26:55",
+        "last_flashed": "2026-03-21 11:16:39",
         "flashed_version": "v2026.03.00-3-gf26c79c7",
         "flashed_commit": "f26c79c7706e"
     },
