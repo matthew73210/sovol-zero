@@ -9,7 +9,7 @@
         "notes": "",
         "is_katapult": true,
         "is_bridge": true,
-        "serial_id": null,
+        "serial_id": "/dev/serial/by-id/usb-katapult_stm32h743xx_34001B001751333233393839-if00",
         "dfu_id": null,
         "magic_baud_tested": false,
         "use_magic_baud": false,
