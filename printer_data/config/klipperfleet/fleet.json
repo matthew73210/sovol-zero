@@ -1,6 +1,6 @@
 [
     {
-        "name": "mcu",
+        "name": "MCU bis",
         "id": "69cd41686193",
         "profile": "MCU",
         "method": "can",
@@ -9,15 +9,13 @@
         "notes": "",
         "is_katapult": true,
         "is_bridge": true,
+        "serial_id": null,
         "dfu_id": null,
         "magic_baud_tested": false,
         "use_magic_baud": false,
         "dfu_exit_tested": false,
         "use_dfu_exit": false,
-        "exclude_from_batch": false,
-        "last_flashed": "2026-03-07 08:41:19",
-        "flashed_version": "v2026.03.00-dirty",
-        "flashed_commit": "27902226cab6"
+        "exclude_from_batch": false
     },
     {
         "name": "extruder_mcu",
