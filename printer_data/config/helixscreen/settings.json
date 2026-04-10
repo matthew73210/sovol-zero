@@ -171,7 +171,7 @@
             "temperature_sensor Chamber_Temp",
             "temperature_fan toolboard"
           ],
-          "timestamp": "2026-04-10T17:54:25Z"
+          "timestamp": "2026-04-10T18:04:05Z"
         },
         "optional": []
       },
@@ -496,6 +496,9 @@
             }
           ]
         }
+      },
+      "probe_sensors": {
+        "sensors": null
       },
       "temp_sensors": {
         "bed": "heater_bed",
