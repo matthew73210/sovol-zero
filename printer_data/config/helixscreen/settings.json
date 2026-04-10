@@ -1,6 +1,6 @@
 {
   "active_printer_id": "default",
-  "config_version": 10,
+  "config_version": 11,
   "dark_mode": true,
   "display": {
     "bed_mesh_render_mode": 0,
@@ -40,35 +40,25 @@
   "print_start_history": {
     "entries": [
       {
-        "phases": {
-          "3": 0
-        },
+        "phases": {},
         "temp_bucket": 125,
         "timestamp": 1775463634,
         "total": 0
       },
       {
-        "phases": {
-          "3": 15,
-          "4": 35
-        },
+        "phases": {},
         "temp_bucket": 200,
         "timestamp": 1775466611,
         "total": 50
       },
       {
-        "phases": {
-          "4": 50
-        },
+        "phases": {},
         "temp_bucket": 200,
         "timestamp": 1775482092,
         "total": 50
       },
       {
-        "phases": {
-          "3": 30,
-          "4": 15
-        },
+        "phases": {},
         "temp_bucket": 200,
         "timestamp": 1775494770,
         "total": 45
