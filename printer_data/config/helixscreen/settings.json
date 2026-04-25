@@ -171,7 +171,7 @@
             "temperature_sensor Chamber_Temp",
             "temperature_fan toolboard"
           ],
-          "timestamp": "2026-04-23T13:06:24Z"
+          "timestamp": "2026-04-25T16:32:58Z"
         },
         "optional": []
       },
@@ -192,6 +192,7 @@
         ],
         "last_brightness": 100,
         "last_color": "#FFFFFF",
+        "last_white": null,
         "led_on_at_start": false,
         "macro_devices": [],
         "selected": [],
@@ -512,6 +513,10 @@
   "telemetry_enabled": true,
   "theme": {
     "preset": 0
+  },
+  "tour": {
+    "completed": true,
+    "last_seen_version": 1
   },
   "ui": {
     "cached_grid": {
